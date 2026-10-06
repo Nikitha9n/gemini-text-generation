@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask a question</title>
+    <!-- Dedicated chat styling -->
+    <link rel="stylesheet" href="/css/chat.css">
+</head>
+
+<body>
+<!-- section1 -->
+    <div class="chat-header">
+        <h2>All doubts solved!!</h2>
+        <h4>Ask anything</h4>
+    </div>
+
+    <form id="askForm" class="chat-form">
+        <input type="text" id="qnInput" name="qnsent" placeholder="Type any question..." autocomplete="off" required>
+        <button type="submit" id="submitBtn">Submit</button>
+    </form>
+<!-- section2 -->
+    <div id="resultBox" class="result-card">
+        <h3 id="displayQuestion" class="question-heading"></h3>
+        <hr class="card-divider">
+        <div id="displayAnswer" class="answer-body"></div>
+    </div>
+
+    <a href="/history" class="history-link">View History</a>
+
+    <!-- External Client-Side Script -->
+     <!-- //connecyed to javascript -->
+    <script src="/js/chat.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Your Question History</title>
+    <link rel="stylesheet" href="/css/history.css">
+</head>
+
+<body>
+
+    <div class="chat-card">
+        <div class="history-header">
+            <h1>Your Past Questions</h1>
+            <div class="header-actions">
+                <% if (history.length> 0) { %>
+                    <form action="/clear-history" method="POST" style="margin: 0;">
+                        <button type="submit" class="btn-clear">Clear History</button>
+                    </form>
+                    <% } %>
+                        <a href="/ask" class="btn-nav">Ask New Question</a>
+            </div>
+        </div>
+
+        <% if (history.length===0) { %>
+            <p class="subtitle">No previous questions found.</p>
+            <% } else { %>
+                <div>
+                    <% history.forEach((item, index)=> { %>
+                        <div class="history-card">
+                            <p class="history-time">
+                                <%= item.time %>
+                            </p>
+                            <h3 class="history-question">Q<%= index + 1 %>: <%= item.question %>
+                            </h3>
+                            <div class="history-answer"><%- item.answerHtml %></div>
+                        </div>
+                        <% }) %>
+                </div>
+                <% } %>
+    </div>
+
+</body>
+
+</html>
